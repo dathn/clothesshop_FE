@@ -1,0 +1,44 @@
+<div>
+    <a class="hiddenanchor" id="signup"></a>
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                    <h1>Login Form</h1>
+                    <div [ngClass]="{'hass-error':f.submitted && !username.valid}">
+                        <input type="text" class="form-control" placeholder="Username" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                        <div *ngIf="f.submitted && !username.valid" class="help-block">Username Required!!</div>
+                    </div>
+                    <div [ngClass]="{'hass-error':f.submitted && !password.valid}">
+                        <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="model.password" #username="ngModel" required /> />
+                        <div *ngIf="f.submitted && !password.valid" class="help-block">Password Required!!</div>
+                    </div>
+                    <div>
+                        <button [disabled]="loading" class="btn btn-default " href="index.html">Log in</button>
+
+                        <a class="reset_pass" href="#">Lost your password?</a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="separator">
+                        <p class="change_link">New to site?
+                            <a href="#signup" class="to_register"> Create Account </a>
+                        </p>
+
+                        <div class="clearfix"></div>
+                        <br />
+
+                        <div>
+                            <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                            <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+    </div>
+</div>
